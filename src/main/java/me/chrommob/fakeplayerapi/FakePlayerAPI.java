@@ -39,7 +39,7 @@ public class FakePlayerAPI {
         config = new Config("config.yml");
         ConfigManager configManager = new ConfigManager(dataDirectory.toFile());
         configManager.addConfig(config);
-        database = new Database(UUID.fromString(config.getKey("id").getAsString()), config.getKey("database").getKey("host").getAsString(), config.getKey("database").getKey("port").getAsInt(), config.getKey("database").getKey("database").getAsString(), config.getKey("database").getKey("username").getAsString(), config.getKey("database").getKey("password").getAsString());
+        database = new Database(UUID.fromString(config.getKey("id").getAsString()), config.getKey("mysql").getKey("host").getAsString(), config.getKey("mysql").getKey("port").getAsInt(), config.getKey("mysql").getKey("database").getAsString(), config.getKey("mysql").getKey("username").getAsString(), config.getKey("mysql").getKey("password").getAsString());
     }
 
     public static FakePlayerAPI getInstance() {
