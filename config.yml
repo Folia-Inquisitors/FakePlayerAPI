@@ -1,0 +1,5 @@
+# Servers to sync with
+servers:
+  # Example server
+  # This is an example and is not used
+  example: true
