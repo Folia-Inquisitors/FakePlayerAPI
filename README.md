@@ -11,9 +11,13 @@ https://discord.gg/aT9z7q7hX8
  
 ## Description
 
-An api so other plugins can hook into it. Ability to hook into other plugins, like YATPA, FASTMOTD.  
+An api that allows other plugins can hook into it. 
+>
+> - Shows the alleged “player“ count on the server.
+>   
+> - Says what players are fake
 
-Main feature of the API would just say the alleged “player“ count on the server. Says what players are fake
+## Features
 
 > Velocity support
 >
