@@ -31,6 +31,7 @@ public class Config extends ConfigWrapper {
         ConfigKey servers = getKey("servers");
         List<String> names = new ArrayList<>();
         for (ConfigKey server : servers.getChildren().values()) {
+            if (server.get().equals("example")) continue; // Skip "example" server
             if (server.getAsBoolean())
                 names.add(server.get());
         }

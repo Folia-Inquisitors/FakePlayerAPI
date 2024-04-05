@@ -57,10 +57,8 @@ public class Database {
             if (resultSet.next()) {
                 return resultSet.getInt("count");
             }
-        } catch (SQLException e) {
-            e.printStackTrace();
-        } finally {
-            return 0;
+        } catch (SQLException ignored) {
         }
+        return 0;
     }
 }
