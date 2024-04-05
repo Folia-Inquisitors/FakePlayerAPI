@@ -21,6 +21,14 @@ repositories {
     }
 }
 
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
 dependencies {
     implementation 'com.github.ChromMob:ConfigManager:9d04690e35'
     compileOnly "com.velocitypowered:velocity-api:3.3.0-SNAPSHOT"
