@@ -7,6 +7,8 @@ import java.sql.Connection;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map;
 import java.util.UUID;
 
 public class Database {
@@ -50,15 +52,17 @@ public class Database {
         }
     }
 
-    public int getUpdatePlayerCount(UUID id) {
+    Map<UUID, Integer> getPlayerCount() {
+        Map<UUID, Integer> playerCount = new HashMap<>();
         // Get player count from database
         try (Connection connection = dataSource.getConnection(); Statement statement = connection.createStatement()) {
-            ResultSet resultSet = statement.executeQuery("SELECT count FROM player_count WHERE id = '" + id.toString() + "'");
-            if (resultSet.next()) {
-                return resultSet.getInt("count");
+            ResultSet resultSet = statement.executeQuery("SELECT * FROM player_count");
+            while (resultSet.next()) {
+                playerCount.put(UUID.fromString(resultSet.getString("id")), resultSet.getInt("count"));
             }
-        } catch (SQLException ignored) {
+        } catch (SQLException e) {
+            e.printStackTrace();
         }
-        return 0;
+        return playerCount;
     }
 }
