@@ -40,6 +40,9 @@ public class FakePlayerAPI {
         ConfigManager configManager = new ConfigManager(dataDirectory.toFile());
         configManager.addConfig(config);
         database = new Database(null, config.getKey("mysql").getKey("host").getAsString(), config.getKey("mysql").getKey("port").getAsInt(), config.getKey("mysql").getKey("database").getAsString(), config.getKey("mysql").getKey("username").getAsString(), config.getKey("mysql").getKey("password").getAsString());
+        if (config.getKey("inject-motd").getAsBoolean()) {
+            server.getEventManager().register(this, new PingListener());
+        }
     }
 
     public static FakePlayerAPI getInstance() {

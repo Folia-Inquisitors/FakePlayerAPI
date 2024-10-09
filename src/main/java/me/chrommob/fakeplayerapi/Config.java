@@ -24,6 +24,7 @@ public class Config extends ConfigWrapper {
         ConfigKey toSync = new ConfigKey("servers", servers, List.of("Servers to sync with"));
         configKeys.add(new ConfigKey("mysql", mysqlKeys, List.of("MySQL settings")));
         configKeys.add(toSync);
+        configKeys.add(new ConfigKey("inject-motd", true, List.of("Inject MOTD", "Injects the MOTD with the player count")));
         return configKeys;
     }
 
