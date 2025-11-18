@@ -11,7 +11,7 @@ https://discord.gg/aT9z7q7hX8
  
 ## Description
 
-An api that allows other plugins can hook into it. 
+A plugin that was originally created to display player count on velocity. This is also an api that allows other plugins can hook into it. 
 >
 > - Shows the alleged “player“ count on the server.
 >   
@@ -23,8 +23,6 @@ An api that allows other plugins can hook into it.
 >
 > SQL Support
 
-## Soft Dependencies
+## Hard Dependencies
 
-> FASTMOTD
->
-> FakePlayer
+>  - [FakePlayer](https://github.com/Folia-Inquisitors/FakePlayer) *Purpose: Generates fake players*
