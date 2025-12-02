@@ -1,4 +1,4 @@
-# FakePlayer
+# FakePlayerAPI
 Website: None
 
 # Official Discord 
